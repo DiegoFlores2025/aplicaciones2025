@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manual de GitHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         :root {
             --primary-color: #6f42c1;
@@ -14,9 +15,11 @@
             --text-color: #343a40;
             --link-color: #5a2e99;
             --border-color: #e9ecef;
+            --poppins: 'Poppins', sans-serif;
+            --inter: 'Inter', sans-serif;
         }
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: var(--inter);
             background-color: var(--background-color);
             color: var(--text-color);
             line-height: 1.6;
@@ -38,21 +41,25 @@
             display: flex;
             justify-content: center;
             gap: 30px;
+            flex-wrap: wrap;
         }
         .navbar a {
             color: #fff;
             text-decoration: none;
             font-weight: 600;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            font-family: var(--poppins);
         }
         .navbar a:hover {
             opacity: 0.8;
+            transform: translateY(-2px);
         }
         header {
             text-align: center;
             padding: 30px 0;
         }
         header h1 {
+            font-family: var(--poppins);
             font-size: 2.5em;
             color: var(--primary-color);
             margin-bottom: 10px;
@@ -73,6 +80,7 @@
             transform: translateY(-5px);
         }
         .section h2 {
+            font-family: var(--poppins);
             font-size: 1.8em;
             color: var(--primary-color);
             margin-top: 0;
@@ -85,10 +93,23 @@
             padding: 15px;
             border-radius: 8px;
             margin-bottom: 10px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
         .list-item:hover {
             background-color: #dee2e6;
+            transform: scale(1.02);
+        }
+        img {
+            max-width: 50%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        @media (max-width: 600px) {
+            .navbar {
+                flex-direction: column;
+                gap: 10px;
+            }
         }
     </style>
 </head>
@@ -101,13 +122,14 @@
             <a href="../proyectos/index.html">Proyectos</a>
         </nav>
         <header>
-            <h1>🐙 Manual: Crear una cuenta en GitHub</h1>
+            <h1><i class="fab fa-github"></i> Manual de GitHub</h1>
+            <img src="https://images.unsplash.com/photo-1618406412419-be8b532e54e4?q=80&w=2670&auto=format&fit=crop" alt="Image of GitHub logo" style="max-width: 50%; height: auto; border-radius: 10px; margin-top: 20px;">
         </header>
         <section class="section">
             <h2>Guía de Inicio Rápido</h2>
             <p>A continuación, te presentamos los pasos detallados para crear tu cuenta en GitHub de forma rápida y sencilla:</p>
             <ol>
-                <li class="list-item">Ingresa a <a href="https://github.com/" target="_blank">https://github.com/</a>.</li>
+                <li class="list-item">Ingresa a <a href="https://github.com/" target="_blank" style="color: var(--link-color); font-weight: 600;">https://github.com/</a>.</li>
                 <li class="list-item">Haz clic en el botón **Sign up** (Registrarse) para iniciar el proceso.</li>
                 <li class="list-item">Proporciona tu **correo electrónico**, crea un **nombre de usuario** y una **contraseña segura**.</li>
                 <li class="list-item">Completa la verificación (captcha) para confirmar que no eres un bot 🤖.</li>
