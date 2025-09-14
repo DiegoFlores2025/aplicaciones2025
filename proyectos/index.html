@@ -3,158 +3,892 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos del Curso</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Proyectos del Curso | Desarrollo de Aplicaciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
-        :root {
-            --primary-color: #fd7e14;
-            --secondary-color: #6c757d;
-            --background-color: #f8f9fa;
-            --card-background: #ffffff;
-            --text-color: #343a40;
-            --link-color: #c95100;
-            --border-color: #e9ecef;
-            --poppins: 'Poppins', sans-serif;
-            --inter: 'Inter', sans-serif;
-        }
-        body {
-            font-family: var(--inter);
-            background-color: var(--background-color);
-            color: var(--text-color);
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
+            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            --java-gradient: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%);
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #1a1a2e;
+            --bg-card: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #b8c6db;
+            --text-muted: #8892b0;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.3);
+            --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.5);
+            --border-radius: 20px;
+            --border-radius-sm: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(253, 126, 20, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 159, 67, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.15) 0%, transparent 50%);
+            z-index: -1;
+            animation: backgroundFloat 20s ease-in-out infinite;
+        }
+
+        @keyframes backgroundFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(1deg); }
+        }
+
         .container {
-            max-width: 900px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: var(--card-background);
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 0 20px;
         }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--bg-secondary);
+            z-index: 1001;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: var(--primary-gradient);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+
+        /* Navigation */
         .navbar {
-            background-color: var(--primary-color);
-            padding: 15px 20px;
-            border-radius: 12px 12px 0 0;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 15px 30px;
             display: flex;
-            justify-content: center;
             gap: 30px;
-            flex-wrap: wrap;
+            z-index: 1000;
+            transition: var(--transition);
         }
+
+        .navbar.scrolled {
+            top: 10px;
+            padding: 12px 25px;
+            box-shadow: var(--shadow-light);
+        }
+
         .navbar a {
-            color: #fff;
+            color: var(--text-primary);
             text-decoration: none;
-            font-weight: 600;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            font-family: var(--poppins);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 16px;
+            border-radius: 25px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
         }
-        .navbar a:hover {
-            opacity: 0.8;
+
+        .navbar a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--primary-gradient);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        .navbar a:hover::before,
+        .navbar a.active::before {
+            left: 0;
+        }
+
+        .navbar a:hover,
+        .navbar a.active {
+            color: white;
             transform: translateY(-2px);
         }
-        header {
-            text-align: center;
-            padding: 30px 0;
-        }
-        header h1 {
-            font-family: var(--poppins);
-            font-size: 2.5em;
-            color: var(--primary-color);
-            margin-bottom: 10px;
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 10px;
+            text-align: center;
+            padding: 100px 0;
         }
-        .section {
-            background-color: #f1f3f5;
-            padding: 25px;
-            border-radius: 10px;
-            margin-top: 25px;
-            border-left: 5px solid var(--primary-color);
-            transition: transform 0.3s ease;
+
+        .hero-content {
+            max-width: 900px;
         }
-        .section:hover {
-            transform: translateY(-5px);
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
         }
-        .section h2 {
-            font-family: var(--poppins);
-            font-size: 1.8em;
-            color: var(--primary-color);
-            margin-top: 0;
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
             display: flex;
             align-items: center;
-            gap: 10px;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeInUp 1s ease-out;
         }
-        .list-item {
-            background-color: #e9ecef;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+
+        .hero-icon {
+            font-size: 1em;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
         }
-        .list-item:hover {
-            background-color: #dee2e6;
-            transform: scale(1.02);
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
-        img {
-            max-width: 50%;
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-image {
+            margin: 50px 0;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .hero-image img {
+            max-width: 60%;
             height: auto;
-            border-radius: 10px;
-            margin-top: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-heavy);
+            transition: var(--transition);
         }
-        .project-link {
-            text-decoration: none;
-            color: var(--link-color);
+
+        .hero-image img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Projects Section */
+        .projects-section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            padding: 40px;
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--java-gradient);
+            transform: scaleX(0);
+            transition: var(--transition);
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+            border-color: rgba(253, 126, 20, 0.3);
+        }
+
+        .project-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .project-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            background: var(--java-gradient);
+            color: white;
+            transition: var(--transition);
+        }
+
+        .project-card:hover .project-icon {
+            transform: rotate(10deg) scale(1.1);
+        }
+
+        .project-meta {
+            flex: 1;
+        }
+
+        .project-title {
+            font-size: 1.4rem;
             font-weight: 600;
-            display: block;
-            margin-top: 10px;
-            transition: color 0.3s ease;
+            color: var(--text-primary);
+            margin-bottom: 5px;
         }
+
+        .project-week {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background: rgba(253, 126, 20, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .tech-tag {
+            background: rgba(102, 126, 234, 0.2);
+            color: var(--text-primary);
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(253, 126, 20, 0.3);
+        }
+
         .project-link:hover {
-            color: var(--link-color);
-            text-decoration: underline;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(253, 126, 20, 0.4);
         }
-        @media (max-width: 600px) {
+
+        /* Features Section */
+        .features-section {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+            margin: 50px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            backdrop-filter: blur(10px);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(253, 126, 20, 0.3);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 20px;
+            color: white;
+            transition: var(--transition);
+        }
+
+        .feature-card:nth-child(1) .feature-icon {
+            background: var(--java-gradient);
+        }
+
+        .feature-card:nth-child(2) .feature-icon {
+            background: var(--secondary-gradient);
+        }
+
+        .feature-card:nth-child(3) .feature-icon {
+            background: var(--accent-gradient);
+        }
+
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             .navbar {
+                padding: 12px 20px;
+                gap: 20px;
+                flex-wrap: wrap;
+            }
+
+            .navbar a {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+
+            .hero {
+                padding: 80px 0;
+            }
+
+            .hero h1 {
                 flex-direction: column;
                 gap: 10px;
             }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-section {
+                padding: 60px 0;
+            }
+
+            .project-card {
+                padding: 30px 25px;
+            }
+
+            .hero-image img {
+                max-width: 80%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                position: relative;
+                top: 0;
+                left: 0;
+                transform: none;
+                border-radius: 0;
+                margin-bottom: 20px;
+                justify-content: center;
+            }
+
+            .hero {
+                min-height: 80vh;
+                padding: 40px 0;
+            }
+
+            .project-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-image img {
+                max-width: 90%;
+            }
+        }
+
+        /* Loading animation */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+
+        .page-loader.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(253, 126, 20, 0.3);
+            border-top: 3px solid #fd7e14;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav class="navbar">
-            <a href="../index.html">Inicio</a>
-            <a href="../git/index.html">Git</a>
-            <a href="../github-manual/index.html">Manual de GitHub</a>
-            <a href="index.html">Proyectos</a>
-        </nav>
-        <header>
-            <h1><i class="fas fa-laptop-code"></i> Proyectos del Curso</h1>
-            <img src="https://images.unsplash.com/photo-1549692520-acc66699316d?q=80&w=2670&auto=format&fit=crop" alt="Image of a programming project" style="max-width: 50%; height: auto; border-radius: 10px; margin-top: 20px;">
-        </header>
-        <section class="section">
-            <h2>Nuestra Biblioteca de Proyectos</h2>
-            <p>Aquí encontrarás una colección de los proyectos más importantes desarrollados durante el curso de Desarrollo de Aplicaciones:</p>
-            <ul>
-                <li class="list-item">
-                    <h3>🚀 Proyectos de la Semana 01 - Java con Maven (JFrame)</h3>
-                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2001" target="_blank" class="project-link">
-                        🔗 Ver en el Repositorio
-                    </a>
-                </li>
-                <li class="list-item">
-                    <h3>🚀 Proyectos de la Semana 02 - Java con Maven (JFrame)</h3>
-                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2002" target="_blank" class="project-link">
-                        🔗 Ver en el Repositorio
-                    </a>
-                </li>
-            </ul>
-        </section>
+    <div class="page-loader" id="pageLoader">
+        <div class="loader"></div>
     </div>
+
+    <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div>
+
+    <nav class="navbar" id="navbar">
+        <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        <a href="../git/index.html"><i class="fab fa-git-alt"></i> Git</a>
+        <a href="../github-manual/index.html"><i class="fab fa-github"></i> GitHub</a>
+        <a href="index.html" class="active"><i class="fas fa-code-branch"></i> Proyectos</a>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-code"></i>
+                    Desarrollo de Aplicaciones 2025-2
+                </div>
+                
+                <h1>
+                    <i class="fas fa-laptop-code hero-icon"></i>
+                    Proyectos del Curso
+                </h1>
+                
+                <p class="hero-subtitle">
+                    Una biblioteca completa de proyectos desarrollados durante el curso
+                </p>
+
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1549692520-acc66699316d?q=80&w=2670&auto=format&fit=crop" alt="Proyecto de programación" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nuestra Biblioteca de Proyectos</h2>
+                <p class="section-subtitle">
+                    Proyectos desarrollados con Java, Maven y JFrame durante el semestre
+                </p>
+            </div>
+            
+            <div class="projects-grid">
+                <div class="project-card fade-in-up">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="project-meta">
+                            <h3 class="project-title">Proyectos de la Semana 01</h3>
+                            <span class="project-week">Primera Semana</span>
+                        </div>
+                    </div>
+                    
+                    <p class="project-description">
+                        Proyectos fundamentales desarrollados con Java y Maven, implementando interfaces gráficas con JFrame. 
+                        Incluye ejercicios básicos de programación orientada a objetos y manejo de eventos.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Maven</span>
+                        <span class="tech-tag">JFrame</span>
+                        <span class="tech-tag">Swing</span>
+                    </div>
+                    
+                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2001" 
+                       target="_blank" 
+                       class="project-link">
+                        <i class="fab fa-github"></i>
+                        Ver en GitHub
+                    </a>
+                </div>
+
+                <div class="project-card fade-in-up">
+                    <div class="project-header">
+                        <div class="project-icon">
+                            <i class="fab fa-java"></i>
+                        </div>
+                        <div class="project-meta">
+                            <h3 class="project-title">Proyectos de la Semana 02</h3>
+                            <span class="project-week">Segunda Semana</span>
+                        </div>
+                    </div>
+                    
+                    <p class="project-description">
+                        Continuación del aprendizaje con proyectos más avanzados usando Java y Maven. 
+                        Implementación de interfaces más complejas y mejores prácticas de programación con JFrame.
+                    </p>
+                    
+                    <div class="project-tech">
+                        <span class="tech-tag">Java</span>
+                        <span class="tech-tag">Maven</span>
+                        <span class="tech-tag">JFrame</span>
+                        <span class="tech-tag">Swing</span>
+                    </div>
+                    
+                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2002" 
+                       target="_blank" 
+                       class="project-link">
+                        <i class="fab fa-github"></i>
+                        Ver en GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Características de los Proyectos</h2>
+                <p class="section-subtitle">
+                    Tecnologías y metodologías aplicadas en el desarrollo
+                </p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fab fa-java"></i>
+                    </div>
+                    <h3>Java Moderno</h3>
+                    <p>Desarrollo con las mejores prácticas de Java, aplicando principios de POO y patrones de diseño.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h3>Gestión Maven</h3>
+                    <p>Uso de Maven para la gestión de dependencias y automatización del proceso de construcción.</p>
+                </div>
+
+                <div class="feature-card fade-in-up">
+                    <div class="feature-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3>Interfaces JFrame</h3>
+                    <p>Desarrollo de interfaces gráficas intuitivas y funcionales usando JFrame y Swing.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Page loader
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('pageLoader');
+            setTimeout(() => {
+                loader.classList.add('hidden');
+            }, 1000);
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll progress indicator
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+            scrollProgress.style.width = scrollPercent + '%';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.fade-in-up').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Project cards hover effect with enhanced interactivity
+        const projectCards = document.querySelectorAll('.project-card');
+        projectCards.forEach((card, index) => {
+            card.addEventListener('mouseenter', () => {
+                const icon = card.querySelector('.project-icon');
+                const techTags = card.querySelectorAll('.tech-tag');
+                
+                // Animate icon
+                icon.style.transform = 'rotate(10deg) scale(1.1)';
+                
+                // Animate tech tags with stagger
+                techTags.forEach((tag, tagIndex) => {
+                    setTimeout(() => {
+                        tag.style.transform = 'translateY(-3px)';
+                        tag.style.background = 'rgba(253, 126, 20, 0.3)';
+                    }, tagIndex * 100);
+                });
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                const icon = card.querySelector('.project-icon');
+                const techTags = card.querySelectorAll('.tech-tag');
+                
+                // Reset icon
+                icon.style.transform = 'rotate(0deg) scale(1)';
+                
+                // Reset tech tags
+                techTags.forEach(tag => {
+                    tag.style.transform = 'translateY(0)';
+                    tag.style.background = 'rgba(102, 126, 234, 0.2)';
+                });
+            });
+        });
+
+        // Initialize tech tags
+        document.querySelectorAll('.tech-tag').forEach(tag => {
+            tag.style.transition = 'all 0.2s ease';
+        });
+
+        // Hero icon pulse animation
+        const heroIcon = document.querySelector('.hero-icon');
+        if (heroIcon) {
+            setInterval(() => {
+                heroIcon.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    heroIcon.style.transform = 'scale(1)';
+                }, 300);
+            }, 3000);
+        }
+
+        // Parallax effect for project cards
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach((card, index) => {
+                const speed = 0.1 + (index * 0.05);
+                const yPos = -(scrolled * speed);
+                card.style.transform = `translateY(${yPos}px)`;
+            });
+        });
+
+        // Loading animation for hero elements
+        window.addEventListener('load', () => {
+            const heroElements = document.querySelectorAll('.hero h1, .hero-subtitle, .hero-image');
+            heroElements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 200 + 1000); // Wait for page loader
+            });
+        });
+
+        // Initialize hero elements
+        document.querySelectorAll('.hero h1, .hero-subtitle, .hero-image').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        // Enhanced project link hover effects
+        const projectLinks = document.querySelectorAll('.project-link');
+        projectLinks.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.background = 'linear-gradient(135deg, #ff9f43 0%, #fd7e14 100%)';
+                link.style.transform = 'translateY(-2px) scale(1.05)';
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                link.style.background = 'var(--primary-gradient)';
+                link.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Add floating animation to feature cards
+        const featureCards = document.querySelectorAll('.feature-card');
+        featureCards.forEach((card, index) => {
+            setInterval(() => {
+                card.style.transform = `translateY(-5px)`;
+                setTimeout(() => {
+                    card.style.transform = `translateY(0px)`;
+                }, 2000);
+            }, 4000 + (index * 1000));
+        });
+
+        // Navbar link active state management
+        const navbarLinks = document.querySelectorAll('.navbar a');
+        navbarLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navbarLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
