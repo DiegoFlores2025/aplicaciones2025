@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyectos del Curso | Desarrollo de Aplicaciones</title>
+    <title>Proyectos del Curso | Desarrollo de Aplicaciones 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -14,19 +14,19 @@
         }
 
         :root {
-            --primary-gradient: linear-gradient(135deg, #fd7e14 0%, #ff9f43 100%);
-            --secondary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --accent-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
-            --java-gradient: linear-gradient(135deg, #ED8936 0%, #DD6B20 100%);
-            --bg-primary: #0a0a0f;
-            --bg-secondary: #1a1a2e;
-            --bg-card: rgba(255, 255, 255, 0.05);
+            --primary-gradient: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            --secondary-gradient: linear-gradient(135deg, #34d399 0%, #10b981 100%);
+            --accent-gradient: linear-gradient(135deg, #6ee7b7 0%, #34d399 100%);
+            --code-gradient: linear-gradient(135deg, #064e3b 0%, #10b981 100%);
+            --bg-primary: #0a0f0a;
+            --bg-secondary: #0f1f0f;
+            --bg-card: rgba(16, 185, 129, 0.05);
             --text-primary: #ffffff;
-            --text-secondary: #b8c6db;
-            --text-muted: #8892b0;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --shadow-light: 0 8px 32px rgba(0, 0, 0, 0.3);
-            --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.5);
+            --text-secondary: #a7f3d0;
+            --text-muted: #6ee7b7;
+            --border-color: rgba(16, 185, 129, 0.2);
+            --shadow-light: 0 8px 32px rgba(16, 185, 129, 0.15);
+            --shadow-heavy: 0 20px 60px rgba(16, 185, 129, 0.25);
             --border-radius: 20px;
             --border-radius-sm: 12px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -49,9 +49,9 @@
             width: 100%;
             height: 100%;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(253, 126, 20, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 159, 67, 0.15) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(102, 126, 234, 0.15) 0%, transparent 50%);
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(52, 211, 153, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(110, 231, 183, 0.15) 0%, transparent 50%);
             z-index: -1;
             animation: backgroundFloat 20s ease-in-out infinite;
         }
@@ -67,31 +67,13 @@
             padding: 0 20px;
         }
 
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: var(--bg-secondary);
-            z-index: 1001;
-        }
-
-        .scroll-progress {
-            height: 100%;
-            background: var(--primary-gradient);
-            width: 0%;
-            transition: width 0.1s ease;
-        }
-
         /* Navigation */
         .navbar {
             position: fixed;
             top: 20px;
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(16, 185, 129, 0.1);
             backdrop-filter: blur(20px);
             border: 1px solid var(--border-color);
             border-radius: 50px;
@@ -186,9 +168,9 @@
             animation: fadeInUp 1s ease-out;
         }
 
-        .hero-icon {
+        .code-icon {
             font-size: 1em;
-            background: var(--primary-gradient);
+            background: var(--code-gradient);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -203,25 +185,74 @@
         .hero-subtitle {
             font-size: 1.25rem;
             color: var(--text-secondary);
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out 0.4s both;
         }
 
         .hero-image {
             margin: 50px 0;
-            animation: fadeInUp 1s ease-out 0.4s both;
+            animation: fadeInUp 1s ease-out 0.6s both;
         }
 
-        .hero-image img {
-            max-width: 60%;
-            height: auto;
+        .hero-mockup {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
-            box-shadow: var(--shadow-heavy);
-            transition: var(--transition);
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+            max-width: 500px;
+            margin: 0 auto;
         }
 
-        .hero-image img:hover {
-            transform: scale(1.05);
+        .hero-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--primary-gradient);
+        }
+
+        .mockup-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .code-logo {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .mockup-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .mockup-subtitle {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
         /* Projects Section */
@@ -251,7 +282,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 30px;
             margin-top: 60px;
         }
@@ -260,7 +291,7 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: var(--border-radius);
-            padding: 40px;
+            padding: 30px;
             backdrop-filter: blur(10px);
             transition: var(--transition);
             position: relative;
@@ -272,21 +303,20 @@
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--java-gradient);
-            transform: scaleX(0);
+            bottom: 0;
+            width: 4px;
+            background: var(--primary-gradient);
+            transform: scaleY(0);
             transition: var(--transition);
         }
 
         .project-card:hover::before {
-            transform: scaleX(1);
+            transform: scaleY(1);
         }
 
         .project-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-heavy);
-            border-color: rgba(253, 126, 20, 0.3);
         }
 
         .project-header {
@@ -296,153 +326,185 @@
             margin-bottom: 20px;
         }
 
-        .project-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
+        .week-badge {
+            background: var(--primary-gradient);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            background: var(--java-gradient);
-            color: white;
-            transition: var(--transition);
-        }
-
-        .project-card:hover .project-icon {
-            transform: rotate(10deg) scale(1.1);
-        }
-
-        .project-meta {
-            flex: 1;
+            gap: 5px;
         }
 
         .project-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-primary);
-            margin-bottom: 5px;
-        }
-
-        .project-week {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            background: rgba(253, 126, 20, 0.1);
-            padding: 4px 12px;
-            border-radius: 20px;
-            display: inline-block;
-        }
-
-        .project-description {
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-            line-height: 1.6;
-        }
-
-        .project-tech {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 25px;
-            flex-wrap: wrap;
-        }
-
-        .tech-tag {
-            background: rgba(102, 126, 234, 0.2);
-            color: var(--text-primary);
-            padding: 4px 12px;
-            border-radius: 15px;
-            font-size: 0.8rem;
-            font-weight: 500;
-            border: 1px solid rgba(102, 126, 234, 0.3);
-        }
-
-        .project-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--primary-gradient);
-            color: white;
-            padding: 12px 24px;
-            border-radius: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: var(--transition);
-            box-shadow: 0 5px 15px rgba(253, 126, 20, 0.3);
-        }
-
-        .project-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(253, 126, 20, 0.4);
-        }
-
-        /* Features Section */
-        .features-section {
-            background: var(--bg-secondary);
-            padding: 80px 0;
-            margin: 50px 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            text-align: center;
-            padding: 30px 20px;
-            background: var(--bg-card);
-            border: 1px solid var(--border-color);
-            border-radius: var(--border-radius);
-            backdrop-filter: blur(10px);
-            transition: var(--transition);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(253, 126, 20, 0.3);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin: 0 auto 20px;
-            color: white;
-            transition: var(--transition);
-        }
-
-        .feature-card:nth-child(1) .feature-icon {
-            background: var(--java-gradient);
-        }
-
-        .feature-card:nth-child(2) .feature-icon {
-            background: var(--secondary-gradient);
-        }
-
-        .feature-card:nth-child(3) .feature-icon {
-            background: var(--accent-gradient);
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-        }
-
-        .feature-card h3 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 600;
             color: var(--text-primary);
             margin-bottom: 10px;
         }
 
-        .feature-card p {
+        .project-description {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--text-muted);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 25px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            transition: var(--transition);
+            width: fit-content;
+        }
+
+        .project-link:hover {
+            background: rgba(16, 185, 129, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Statistics Section */
+        .stats-section {
+            background: var(--bg-secondary);
+            padding: 80px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+
+        .cta-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid var(--border-color);
+            color: var(--text-primary);
+            box-shadow: none;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.4);
+        }
+
+        .cta-button.secondary:hover {
+            background: var(--bg-card);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.2);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--bg-secondary);
+            z-index: 1001;
+        }
+
+        .scroll-progress {
+            height: 100%;
+            background: var(--primary-gradient);
+            width: 0%;
+            transition: width 0.1s ease;
         }
 
         /* Animations */
@@ -478,25 +540,19 @@
                 padding: 80px 0;
             }
 
-            .hero h1 {
-                flex-direction: column;
-                gap: 10px;
-            }
-
             .projects-grid {
                 grid-template-columns: 1fr;
             }
 
-            .projects-section {
+            .projects-section,
+            .stats-section,
+            .cta-section {
                 padding: 60px 0;
             }
 
-            .project-card {
-                padding: 30px 25px;
-            }
-
-            .hero-image img {
-                max-width: 80%;
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
             }
         }
 
@@ -506,9 +562,8 @@
                 top: 0;
                 left: 0;
                 transform: none;
-                border-radius: 0;
+                border-radius: var(--border-radius-sm);
                 margin-bottom: 20px;
-                justify-content: center;
             }
 
             .hero {
@@ -516,56 +571,17 @@
                 padding: 40px 0;
             }
 
-            .project-header {
-                flex-direction: column;
-                text-align: center;
+            .project-card {
+                padding: 20px;
             }
 
-            .hero-image img {
-                max-width: 90%;
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
-        }
-
-        /* Loading animation */
-        .page-loader {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease;
-        }
-
-        .page-loader.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-
-        .loader {
-            width: 50px;
-            height: 50px;
-            border: 3px solid rgba(253, 126, 20, 0.3);
-            border-top: 3px solid #fd7e14;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
         }
     </style>
 </head>
 <body>
-    <div class="page-loader" id="pageLoader">
-        <div class="loader"></div>
-    </div>
-
     <div class="scroll-indicator">
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
@@ -574,28 +590,70 @@
         <a href="../index.html"><i class="fas fa-home"></i> Inicio</a>
         <a href="../git/index.html"><i class="fab fa-git-alt"></i> Git</a>
         <a href="../github-manual/index.html"><i class="fab fa-github"></i> GitHub</a>
-        <a href="index.html" class="active"><i class="fas fa-code-branch"></i> Proyectos</a>
+        <a href="index.html" class="active"><i class="fas fa-laptop-code"></i> Proyectos</a>
     </nav>
 
     <section class="hero">
         <div class="container">
             <div class="hero-content">
                 <div class="hero-badge">
-                    <i class="fas fa-code"></i>
-                    Desarrollo de Aplicaciones 2025-2
+                    <i class="fas fa-rocket"></i>
+                    Desarrollo de Aplicaciones 2025
                 </div>
                 
                 <h1>
-                    <i class="fas fa-laptop-code hero-icon"></i>
+                    <i class="fas fa-laptop-code code-icon"></i>
                     Proyectos del Curso
                 </h1>
                 
                 <p class="hero-subtitle">
-                    Una biblioteca completa de proyectos desarrollados durante el curso
+                    Explora nuestra colección de proyectos Java con Maven y JFrame
+                </p>
+
+                <p class="hero-description">
+                    Descubre los proyectos más destacados del curso de Desarrollo de Aplicaciones. 
+                    Cada proyecto representa un hito en el aprendizaje y dominio de tecnologías modernas.
                 </p>
 
                 <div class="hero-image">
-                    <img src="https://images.unsplash.com/photo-1549692520-acc66699316d?q=80&w=2670&auto=format&fit=crop" alt="Proyecto de programación" />
+                    <div class="hero-mockup">
+                        <div class="mockup-header">
+                            <div class="code-logo">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>
+                                <div class="mockup-title">Java Development</div>
+                                <div class="mockup-subtitle">Proyectos con Maven & JFrame</div>
+                            </div>
+                        </div>
+                        <div style="color: var(--text-muted); text-align: center; padding: 20px;">
+                            <i class="fas fa-code-branch" style="font-size: 2rem; margin-bottom: 10px; color: var(--text-secondary);"></i>
+                            <p>Construyendo aplicaciones robustas</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number" data-count="2">0</span>
+                    <span class="stat-label">Semanas Completadas</span>
+                </div>
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">% Java & Maven</span>
+                </div>
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number" data-count="24">0</span>
+                    <span class="stat-label">Horas de Código</span>
+                </div>
+                <div class="stat-item fade-in-up">
+                    <span class="stat-number" data-count="5">0</span>
+                    <span class="stat-label">Tecnologías</span>
                 </div>
             </div>
         </div>
@@ -606,122 +664,107 @@
             <div class="section-header">
                 <h2 class="section-title">Nuestra Biblioteca de Proyectos</h2>
                 <p class="section-subtitle">
-                    Proyectos desarrollados con Java, Maven y JFrame durante el semestre
+                    Una colección curada de proyectos que demuestran el progreso y las habilidades adquiridas
                 </p>
             </div>
             
             <div class="projects-grid">
                 <div class="project-card fade-in-up">
                     <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fab fa-java"></i>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Proyectos de la Semana 01</h3>
-                            <span class="project-week">Primera Semana</span>
+                        <div class="week-badge">
+                            <i class="fas fa-calendar-week"></i>
+                            Semana 01
                         </div>
                     </div>
-                    
+                    <h3 class="project-title">Fundamentos Java con Maven</h3>
                     <p class="project-description">
-                        Proyectos fundamentales desarrollados con Java y Maven, implementando interfaces gráficas con JFrame. 
-                        Incluye ejercicios básicos de programación orientada a objetos y manejo de eventos.
+                        Introducción a la programación Java utilizando Maven como herramienta de gestión de proyectos. 
+                        Desarrollo de interfaces gráficas con JFrame y componentes Swing básicos.
                     </p>
-                    
                     <div class="project-tech">
                         <span class="tech-tag">Java</span>
                         <span class="tech-tag">Maven</span>
                         <span class="tech-tag">JFrame</span>
                         <span class="tech-tag">Swing</span>
                     </div>
-                    
-                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2001" 
-                       target="_blank" 
-                       class="project-link">
+                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2001" target="_blank" class="project-link">
                         <i class="fab fa-github"></i>
-                        Ver en GitHub
+                        Ver en Repositorio
                     </a>
                 </div>
 
                 <div class="project-card fade-in-up">
                     <div class="project-header">
-                        <div class="project-icon">
-                            <i class="fab fa-java"></i>
-                        </div>
-                        <div class="project-meta">
-                            <h3 class="project-title">Proyectos de la Semana 02</h3>
-                            <span class="project-week">Segunda Semana</span>
+                        <div class="week-badge">
+                            <i class="fas fa-calendar-week"></i>
+                            Semana 02
                         </div>
                     </div>
-                    
+                    <h3 class="project-title">Aplicaciones Avanzadas JFrame</h3>
                     <p class="project-description">
-                        Continuación del aprendizaje con proyectos más avanzados usando Java y Maven. 
-                        Implementación de interfaces más complejas y mejores prácticas de programación con JFrame.
+                        Profundización en el desarrollo de aplicaciones de escritorio con funcionalidades avanzadas. 
+                        Implementación de patrones de diseño y mejores prácticas en Java.
                     </p>
-                    
                     <div class="project-tech">
                         <span class="tech-tag">Java</span>
                         <span class="tech-tag">Maven</span>
                         <span class="tech-tag">JFrame</span>
-                        <span class="tech-tag">Swing</span>
+                        <span class="tech-tag">Design Patterns</span>
                     </div>
-                    
-                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2002" 
-                       target="_blank" 
-                       class="project-link">
+                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/a2341959da7a204cfd8f4762b1ef2f419ba988c6/SEMANA%2002" target="_blank" class="project-link">
                         <i class="fab fa-github"></i>
-                        Ver en GitHub
+                        Ver en Repositorio
                     </a>
+                </div>
+
+                <!-- Project placeholder for future weeks -->
+                <div class="project-card fade-in-up" style="opacity: 0.6; border-style: dashed;">
+                    <div class="project-header">
+                        <div class="week-badge" style="background: linear-gradient(135deg, #6b7280 0%, #4b5563 100%);">
+                            <i class="fas fa-clock"></i>
+                            Próximamente
+                        </div>
+                    </div>
+                    <h3 class="project-title">Proyectos Futuros</h3>
+                    <p class="project-description">
+                        Más proyectos emocionantes están en desarrollo. Mantente atento para nuevas 
+                        implementaciones y tecnologías que se agregarán al portafolio.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Coming Soon</span>
+                    </div>
+                    <div class="project-link" style="opacity: 0.5; pointer-events: none;">
+                        <i class="fas fa-hourglass-half"></i>
+                        En Desarrollo
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="features-section">
+    <section class="cta-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Características de los Proyectos</h2>
-                <p class="section-subtitle">
-                    Tecnologías y metodologías aplicadas en el desarrollo
+            <div class="cta-content">
+                <h2 class="cta-title">¡Explora Nuestros Proyectos!</h2>
+                <p class="cta-description">
+                    Sumérgete en el código, aprende de las implementaciones y descubre las técnicas 
+                    utilizadas en cada proyecto del curso.
                 </p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fab fa-java"></i>
-                    </div>
-                    <h3>Java Moderno</h3>
-                    <p>Desarrollo con las mejores prácticas de Java, aplicando principios de POO y patrones de diseño.</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-cube"></i>
-                    </div>
-                    <h3>Gestión Maven</h3>
-                    <p>Uso de Maven para la gestión de dependencias y automatización del proceso de construcción.</p>
-                </div>
-
-                <div class="feature-card fade-in-up">
-                    <div class="feature-icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <h3>Interfaces JFrame</h3>
-                    <p>Desarrollo de interfaces gráficas intuitivas y funcionales usando JFrame y Swing.</p>
+                <div class="cta-buttons">
+                    <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2" target="_blank" class="cta-button">
+                        <i class="fab fa-github"></i>
+                        Ver Repositorio Completo
+                    </a>
+                    <a href="../index.html" class="cta-button secondary">
+                        <i class="fas fa-arrow-left"></i>
+                        Volver al Inicio
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        // Page loader
-        window.addEventListener('load', () => {
-            const loader = document.getElementById('pageLoader');
-            setTimeout(() => {
-                loader.classList.add('hidden');
-            }, 1000);
-        });
-
         // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
@@ -737,20 +780,6 @@
             const scrollProgress = document.getElementById('scrollProgress');
             const scrollPercent = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
             scrollProgress.style.width = scrollPercent + '%';
-        });
-
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
         });
 
         // Intersection Observer for animations
@@ -776,118 +805,281 @@
             observer.observe(el);
         });
 
-        // Project cards hover effect with enhanced interactivity
+        // Counter animation for statistics
+        const animateCounter = (element) => {
+            const target = parseInt(element.getAttribute('data-count'));
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target;
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current);
+                }
+            }, 16);
+        };
+
+        // Statistics counter observer
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const counter = entry.target.querySelector('.stat-number');
+                    if (counter && !counter.classList.contains('animated')) {
+                        counter.classList.add('animated');
+                        animateCounter(counter);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe stat items
+        document.querySelectorAll('.stat-item').forEach(item => {
+            statsObserver.observe(item);
+        });
+
+        // Project cards hover effects
         const projectCards = document.querySelectorAll('.project-card');
-        projectCards.forEach((card, index) => {
+        projectCards.forEach(card => {
             card.addEventListener('mouseenter', () => {
-                const icon = card.querySelector('.project-icon');
                 const techTags = card.querySelectorAll('.tech-tag');
-                
-                // Animate icon
-                icon.style.transform = 'rotate(10deg) scale(1.1)';
-                
-                // Animate tech tags with stagger
-                techTags.forEach((tag, tagIndex) => {
+                techTags.forEach((tag, index) => {
                     setTimeout(() => {
-                        tag.style.transform = 'translateY(-3px)';
-                        tag.style.background = 'rgba(253, 126, 20, 0.3)';
-                    }, tagIndex * 100);
+                        tag.style.transform = 'translateY(-3px) scale(1.05)';
+                        tag.style.background = 'rgba(16, 185, 129, 0.2)';
+                    }, index * 50);
                 });
             });
             
             card.addEventListener('mouseleave', () => {
-                const icon = card.querySelector('.project-icon');
                 const techTags = card.querySelectorAll('.tech-tag');
-                
-                // Reset icon
-                icon.style.transform = 'rotate(0deg) scale(1)';
-                
-                // Reset tech tags
                 techTags.forEach(tag => {
-                    tag.style.transform = 'translateY(0)';
-                    tag.style.background = 'rgba(102, 126, 234, 0.2)';
+                    tag.style.transform = 'translateY(0) scale(1)';
+                    tag.style.background = 'rgba(16, 185, 129, 0.1)';
                 });
             });
         });
 
-        // Initialize tech tags
+        // Add transition to tech tags
         document.querySelectorAll('.tech-tag').forEach(tag => {
-            tag.style.transition = 'all 0.2s ease';
+            tag.style.transition = 'all 0.3s ease';
         });
 
-        // Hero icon pulse animation
-        const heroIcon = document.querySelector('.hero-icon');
-        if (heroIcon) {
-            setInterval(() => {
-                heroIcon.style.transform = 'scale(1.1)';
-                setTimeout(() => {
-                    heroIcon.style.transform = 'scale(1)';
-                }, 300);
-            }, 3000);
-        }
-
-        // Parallax effect for project cards
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const projectCards = document.querySelectorAll('.project-card');
-            
-            projectCards.forEach((card, index) => {
-                const speed = 0.1 + (index * 0.05);
-                const yPos = -(scrolled * speed);
-                card.style.transform = `translateY(${yPos}px)`;
-            });
-        });
-
-        // Loading animation for hero elements
+        // Loading animation
         window.addEventListener('load', () => {
-            const heroElements = document.querySelectorAll('.hero h1, .hero-subtitle, .hero-image');
+            document.body.style.opacity = '1';
+            
+            // Trigger hero animations
+            const heroElements = document.querySelectorAll('.hero h1, .hero-subtitle, .hero-description, .hero-image');
             heroElements.forEach((element, index) => {
                 setTimeout(() => {
                     element.style.opacity = '1';
                     element.style.transform = 'translateY(0)';
-                }, index * 200 + 1000); // Wait for page loader
+                }, index * 200);
             });
         });
 
-        // Initialize hero elements
-        document.querySelectorAll('.hero h1, .hero-subtitle, .hero-image').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(30px)';
-            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        });
+        // Initialize page
+        document.body.style.opacity = '0';
+        document.body.style.transition = 'opacity 0.5s ease';
 
-        // Enhanced project link hover effects
-        const projectLinks = document.querySelectorAll('.project-link');
-        projectLinks.forEach(link => {
+        // Project links hover effect
+        document.querySelectorAll('.project-link').forEach(link => {
             link.addEventListener('mouseenter', () => {
-                link.style.background = 'linear-gradient(135deg, #ff9f43 0%, #fd7e14 100%)';
-                link.style.transform = 'translateY(-2px) scale(1.05)';
+                link.style.transform = 'translateY(-2px) scale(1.02)';
             });
             
             link.addEventListener('mouseleave', () => {
-                link.style.background = 'var(--primary-gradient)';
                 link.style.transform = 'translateY(0) scale(1)';
             });
         });
 
-        // Add floating animation to feature cards
-        const featureCards = document.querySelectorAll('.feature-card');
-        featureCards.forEach((card, index) => {
-            setInterval(() => {
-                card.style.transform = `translateY(-5px)`;
-                setTimeout(() => {
-                    card.style.transform = `translateY(0px)`;
-                }, 2000);
-            }, 4000 + (index * 1000));
+        // CTA buttons hover effects
+        document.querySelectorAll('.cta-button').forEach(button => {
+            button.addEventListener('mouseenter', () => {
+                if (button.classList.contains('secondary')) {
+                    button.style.background = 'var(--bg-card)';
+                    button.style.borderColor = 'rgba(16, 185, 129, 0.4)';
+                } else {
+                    button.style.background = 'linear-gradient(135deg, #059669 0%, #047857 100%)';
+                }
+            });
+            
+            button.addEventListener('mouseleave', () => {
+                if (button.classList.contains('secondary')) {
+                    button.style.background = 'transparent';
+                    button.style.borderColor = 'var(--border-color)';
+                } else {
+                    button.style.background = 'var(--primary-gradient)';
+                }
+            });
         });
 
-        // Navbar link active state management
-        const navbarLinks = document.querySelectorAll('.navbar a');
-        navbarLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                navbarLinks.forEach(l => l.classList.remove('active'));
-                link.classList.add('active');
+        // Parallax effect for hero mockup
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const mockup = document.querySelector('.hero-mockup');
+            
+            if (mockup) {
+                const speed = 0.3;
+                const yPos = -(scrolled * speed);
+                mockup.style.transform = `translateY(${yPos}px)`;
+            }
+        });
+
+        // Random floating animation for code icons
+        const codeIcons = document.querySelectorAll('.code-logo i, .code-icon');
+        codeIcons.forEach(icon => {
+            setInterval(() => {
+                const randomX = (Math.random() - 0.5) * 4;
+                const randomY = (Math.random() - 0.5) * 4;
+                icon.style.transform = `translate(${randomX}px, ${randomY}px)`;
+                
+                setTimeout(() => {
+                    icon.style.transform = 'translate(0px, 0px)';
+                }, 1000);
+            }, 4000 + Math.random() * 2000);
+        });
+
+        // Add transition to code icons
+        codeIcons.forEach(icon => {
+            icon.style.transition = 'transform 1s ease';
+        });
+
+        // Week badge pulse animation
+        document.querySelectorAll('.week-badge').forEach(badge => {
+            setInterval(() => {
+                badge.style.transform = 'scale(1.05)';
+                setTimeout(() => {
+                    badge.style.transform = 'scale(1)';
+                }, 200);
+            }, 5000 + Math.random() * 3000);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
+        });
+
+        // Dynamic background particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '2px';
+            particle.style.height = '2px';
+            particle.style.background = 'rgba(16, 185, 129, 0.3)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '-1';
+            
+            const startX = Math.random() * window.innerWidth;
+            const startY = window.innerHeight + 10;
+            const endY = -10;
+            const duration = 3000 + Math.random() * 2000;
+            
+            particle.style.left = startX + 'px';
+            particle.style.top = startY + 'px';
+            
+            document.body.appendChild(particle);
+            
+            particle.animate([
+                { transform: 'translateY(0px)', opacity: 0 },
+                { transform: 'translateY(-20px)', opacity: 1 },
+                { transform: `translateY(${endY - startY}px)`, opacity: 0 }
+            ], {
+                duration: duration,
+                easing: 'linear'
+            }).addEventListener('finish', () => {
+                particle.remove();
+            });
+        }
+
+        // Create particles periodically
+        setInterval(createParticle, 800);
+
+        // Enhanced project card interactions
+        projectCards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                // Add glowing border effect
+                card.style.boxShadow = '0 20px 60px rgba(16, 185, 129, 0.25), 0 0 0 1px rgba(16, 185, 129, 0.3)';
+                
+                // Animate project title
+                const title = card.querySelector('.project-title');
+                if (title) {
+                    title.style.color = 'var(--text-muted)';
+                }
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.boxShadow = '';
+                
+                const title = card.querySelector('.project-title');
+                if (title) {
+                    title.style.color = 'var(--text-primary)';
+                }
+            });
+        });
+
+        // Typewriter effect for hero description
+        const heroDescription = document.querySelector('.hero-description');
+        if (heroDescription) {
+            const text = heroDescription.textContent;
+            heroDescription.textContent = '';
+            
+            setTimeout(() => {
+                let index = 0;
+                const typeWriter = setInterval(() => {
+                    heroDescription.textContent += text[index];
+                    index++;
+                    
+                    if (index >= text.length) {
+                        clearInterval(typeWriter);
+                    }
+                }, 25);
+            }, 1200);
+        }
+
+        // Enhanced navbar interaction
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.boxShadow = '0 5px 15px rgba(16, 185, 129, 0.3)';
+            });
+            
+            link.addEventListener('mouseleave', () => {
+                link.style.boxShadow = '';
+            });
+        });
+
+        // Progressive loading animation for project cards
+        const projectCardsAnimation = document.querySelectorAll('.project-card');
+        const projectObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }, index * 150);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        projectCardsAnimation.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px) scale(0.9)';
+            card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
+            projectObserver.observe(card);
         });
     </script>
 </body>
