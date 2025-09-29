@@ -754,9 +754,64 @@
         .week-item.coming-soon .week-header {
             cursor: not-allowed;
         }
+
+        /* Logo */
+        .navbar-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 1001;
+            background: rgba(16, 185, 129, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 8px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .navbar-logo.scrolled {
+            top: 10px;
+            box-shadow: var(--shadow-light);
+        }
+
+        .navbar-logo img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .navbar-logo:hover img {
+            transform: scale(1.05) rotate(5deg);
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(16, 185, 129, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 12px 20px;
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+            transition: var(--transition);
+        }
     </style>
 </head>
 <body>
+    <!-- Logo -->
+    <div class="navbar-logo" id="navbarLogo">
+        <img src="../img/upla.png" alt="Tu Logo" id="logoImg">
+    </div>
     <div class="scroll-indicator">
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
@@ -1004,7 +1059,7 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
                                     </div>
                                     <div class="exercise-actions">
                                         <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/dc1ab26fb7c1e3e7d3234ddc0ec48de7e1d2f3e3/SEMANA%2003/Actividad/Semana03_Actividad_2025.pdf" class="exercise-link download">
-                                            <i class="fas fa-file-text"></i> Ver Enunciado 
+                                            <i class="fas fa-download"></i> Ver Enunciado 
                                         </a>
                                         <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/main/SEMANA%2003/" target="_blank" class="exercise-link repository">
                                             <i class="fab fa-github"></i> Ver en GitHub
@@ -1016,12 +1071,86 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
                     </div>
                 </div>
 
-                <!-- Semanas Futuras -->
                 <!-- Semana 4 -->
+                <div class="week-item fade-in-up" data-week="4">
+                    <div class="week-header" onclick="toggleWeek(4)">
+                        <div class="week-info">
+                            <div class="week-number">04</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 04</strong> - Modelo Vista Controlador</h3>
+                                <p>Aplicaciones sencillas con el MVC</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-4-content">
+                        <div class="week-body">
+                            <div class="exercises-grid">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">Descuento por Cantidad Comprada</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Usando el modelo MVC, crear la estructura dividida en Modelo, Vista, Controlador y el Main; para calcular el area y perímetro de las siguientes figuras geométricas: 
+                                        Cuadrado, Rectángulo, Círculo y Triángulo. Seguir utilizando JFrame para las vistas y conectarlo con el Controlador quien es el que hace los calculos.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                        <span class="tech-tag">JFrame</span>
+                                        <span class="tech-tag">Swing</span>
+                                    </div>
+                                    <div class="exercise-actions">
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/64bb29528f519e96c6a78091d662d80a2abc58ce/SEMANA%2004/Actividad/S04_ACTIVIDAD_01" class="exercise-link download">
+                                            <i class="fas fa-file-text"></i> Ver Enunciado
+                                        </a>
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/64bb29528f519e96c6a78091d662d80a2abc58ce/SEMANA%2004/Actividad/S04_ACTIVIDAD_01" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 2 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">Login - Conversiones</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Usando el MVC, crear un login para iniciar sesion y registrar usuarios nuevos; los usuarios pueden ser Docente o Alumno.
+                                        El docente puede realizar los calculos de conversion, mientras que el alumno solo puede ver lo calculado por el docente.
+                                        Usa la estructura: Modelo para las clases necesarioas, Vista para la interfaz del login y Controlador quien hará las acciones
+
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                        <span class="tech-tag">JFrame</span>
+                                        <span class="tech-tag">Swing</span>
+                                    </div>
+                                    <div class="exercise-actions">
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/64bb29528f519e96c6a78091d662d80a2abc58ce/SEMANA%2004/Actividad/S04_ACTIVIDAD_02" class="exercise-link download">
+                                            <i class="fas fa-download"></i> Ver Enunciado 
+                                        </a>
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/64bb29528f519e96c6a78091d662d80a2abc58ce/SEMANA%2004/Actividad/S04_ACTIVIDAD_01" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semanas Futuras -->
+                <!-- Semana 5 -->
                 <div class="week-item coming-soon fade-in-up">
                     <div class="week-header">
                         <div class="week-info">
-                            <div class="week-number">04</div>
+                            <div class="week-number">05</div>
                             <div class="week-details">
                                 <h3>Proximamente</h3>
                                 <p>Proximamente</p>
@@ -1062,11 +1191,11 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
         <div class="container">
             <div class="stats-grid">
                 <div class="stat-item">
-                    <span class="stat-number" data-count="3">0</span>
+                    <span class="stat-number" data-count="4">0</span>
                     <span class="stat-label">Semanas Completadas</span>
                 </div>
                 <div class="stat-item">
-                    <span class="stat-number" data-count="6">0</span>
+                    <span class="stat-number" data-count="8">0</span>
                     <span class="stat-label">Ejercicios Desarrollados</span>
                 </div>
                 <div class="stat-item">
