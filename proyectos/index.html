@@ -1133,7 +1133,7 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
                                     </div>
                                     <div class="exercise-actions">
                                         <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/64bb29528f519e96c6a78091d662d80a2abc58ce/SEMANA%2004/Actividad/S04_ACTIVIDAD_02" class="exercise-link download">
-                                            <i class="fas fa-file-text"></i> Ver Enunciado 
+                                            <i class="fas fa-download"></i> Ver Enunciado 
                                         </a>
                                         <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/64bb29528f519e96c6a78091d662d80a2abc58ce/SEMANA%2004/Actividad/S04_ACTIVIDAD_01" target="_blank" class="exercise-link repository">
                                             <i class="fab fa-github"></i> Ver en GitHub
@@ -1195,8 +1195,123 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
                     </div>
                 </div>
 
-                <!-- Semanas Futuras -->
                 <!-- Semana 6 -->
+                <div class="week-item fade-in-up" data-week="6">
+                    <div class="week-header" onclick="toggleWeek(6)">
+                        <div class="week-info">
+                            <div class="week-number">06</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 06</strong> - Base de Datos de Sistema Login</h3>
+                                <p>Login y Registro de un Sistema de Gestión de Canchas</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-6-content">
+                        <div class="week-body">
+                            <div class="exercises-grid">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">Base de Datos en MySQL</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se tiene que crear la base de datos del Sistema de Gestión de Canchas.
+                                        Se usará MySQL para crear el DATABASE, y las tablas (USUARIO, CANCHAS, RESERVAS)
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">MySQL</span>
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9ddb147142f7bb44560907ab100f0595d3beabe7/SEMANA%2006" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semana 7 -->
+                <div class="week-item fade-in-up" data-week="7">
+                    <div class="week-header" onclick="toggleWeek(7)">
+                        <div class="week-info">
+                            <div class="week-number">07</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 07 y 08</strong> - Sitema de Reservas de Canchas</h3>
+                                <p>Login - Registro - Gestion - Reserva de un Sistema de Gestión de Canchas</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-7-content">
+                        <div class="week-body">
+                            <div class="exercises-grid">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">LOGIN - REGISTRO - CRUD - Sistema de Reservas</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        El proyecto consiste en un sistema de gestión de canchas el cual cuenta con dos usuarios (admin y cliente).
+                                        El administrador puede gestionar las canchas (crear, actualizar, eliminar y listar). Asimismo se encarga de la 
+                                        gestion de usuarios, editar sus datos, o eliminarlo y por ultimo se encarga de gestionar las reservas (aprobar o rechazar una reserva)
+                                        El cliente puede gestionar reservas (crear, actualizar si aun no se aprueba, eliminar), también puede ver su historial de reservas.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">MySQL</span>
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/ccc63b1864a4e5da830bb91bbfd8649a11305e64/SEMANA%2008/S8_PROYECTO" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 2 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">BASE DE DATOS DEL SISTEMA DE GESTION DE RESERVAS</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        El sistema almacena 3 Entidades (Usuario, donde esta Cliente y Admin); con atributos de codigo, dni, contraseña, nombre de usuario, apellido
+                                        email, telefono y rol.
+                                        Cancha; con atributos de: codigo, nombre, deporte, capacidad, descripcion, estado, precio:hora.
+                                        Reservas; con atributos: id, cod usuario (fk), cod cancha(fk), horaInicio, HoraFin, estado, precio.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">MySQL</span>
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/ccc63b1864a4e5da830bb91bbfd8649a11305e64/SEMANA%2008/Dump20251019.sql" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semanas Futuras -->
+                <!-- Semana 8 -->
                 <div class="week-item coming-soon fade-in-up">
                     <div class="week-header">
                         <div class="week-info">
