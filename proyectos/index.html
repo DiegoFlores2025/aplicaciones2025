@@ -338,12 +338,17 @@
             margin-top: 0;
         }
 
-        /* Ejercicios Grid - 2 paneles por semana */
+        /* Ejercicios Grid - 2 paneles por semana por defecto */
         .exercises-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-bottom: 20px;
+        }
+
+        /* Variante de 3 columnas para semanas específicas */
+        .exercises-grid.three-columns {
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .exercise-panel {
@@ -472,6 +477,20 @@
         .exercise-link.repository:hover {
             box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
             transform: translateY(-2px) scale(1.02);
+        }
+
+        /* Responsive para 3 columnas */
+        @media (max-width: 1200px) {
+            .exercises-grid.three-columns {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .exercises-grid,
+            .exercises-grid.three-columns {
+                grid-template-columns: 1fr;
+            }
         }
 
         /* Statistics */
@@ -1228,7 +1247,7 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
                                         <span class="tech-tag">Java</span>
                                     </div>
                                     <div class="exercise-actions">                                        
-                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/6f3e5a740633db6092b6c07ca870355333f632c5/SEMANA%2006" target="_blank" class="exercise-link repository">
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9ddb147142f7bb44560907ab100f0595d3beabe7/SEMANA%2006" target="_blank" class="exercise-link repository">
                                             <i class="fab fa-github"></i> Ver en GitHub
                                         </a>
                                     </div>
@@ -1310,12 +1329,136 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
                     </div>
                 </div>
 
+                <!-- Semana 9 -->
+                <div class="week-item fade-in-up" data-week="9">
+                    <div class="week-header" onclick="toggleWeek(9)">
+                        <div class="week-info">
+                            <div class="week-number">09</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 09</strong> - Java Web</h3>
+                                <p>Diseño de Interfaz (FrontEnd)</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-9-content">
+                        <div class="week-body">
+                            <div class="exercises-grid three-columns">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">LOGIN CON 3 USUARIOS</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado la interfaz de login sobre un sistema de Gestión de Tesis, el cual cuenta con 3 usuarios (Admin, Docente, Alumno)
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/73bf61c8e37faf32d105a9f49595a1c64fe9932d/SEMANA%2009/Actividad%2001%20-%20Login/LoginGestionTesis.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Login
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/73bf61c8e37faf32d105a9f49595a1c64fe9932d/SEMANA%2009/Clase/S09_APLICA_CLASE_01/src/main/webapp" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 2 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">PANELES DE 3 USUARIOS</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado las interfaces para cada usuario del sistema de gestion de tesis, entre ellos el panel para el administrador,
+                                        para el docente y para el alumno; cada uno con funciones exclusivas.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/73bf61c8e37faf32d105a9f49595a1c64fe9932d/SEMANA%2009/Actividad%2002%20-%20Paneles/Panel%20Admin.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Panel Admin
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/73bf61c8e37faf32d105a9f49595a1c64fe9932d/SEMANA%2009/Actividad%2002%20-%20Paneles/Panel%20Docente.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Panel Docente
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/73bf61c8e37faf32d105a9f49595a1c64fe9932d/SEMANA%2009/Actividad%2002%20-%20Paneles/Panel%20Alumno.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Panel Alumno
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/73bf61c8e37faf32d105a9f49595a1c64fe9932d/SEMANA%2009/Clase/S09_APLICA_CLASE_01/src/main/webapp" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 3 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">3</div>
+                                        <h4 class="exercise-title">LIBRERIAS DE CSS</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Librerias de CSS que ayudan al diseño del FrontEnd, se han tomado en cuenta 4 tipos de frameworks.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://getbootstrap.com/" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-file-alt"></i> BootStrap
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://tailwindcss.com/" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-file-alt"></i> TailWindCSS
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://bulma.io/" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-file-alt"></i> Bulma
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://get.foundation/" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-file-alt"></i> Foundation
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Semanas Futuras -->
-                <!-- Semana 8 -->
+                <!-- Semana 10 -->
                 <div class="week-item coming-soon fade-in-up">
                     <div class="week-header">
                         <div class="week-info">
-                            <div class="week-number">06</div>
+                            <div class="week-number">10</div>
                             <div class="week-details">
                                 <h3>Proximamente</h3>
                                 <p>Proximamente</p>
