@@ -1453,23 +1453,520 @@ Dadas la categoría y la cantidad de horas trabajadas de un empleado, diseñe un
                     </div>
                 </div>
 
-                <!-- Semanas Futuras -->
                 <!-- Semana 10 -->
-                <div class="week-item coming-soon fade-in-up">
-                    <div class="week-header">
+                <div class="week-item fade-in-up" data-week="10">
+                    <div class="week-header" onclick="toggleWeek(10)">
                         <div class="week-info">
                             <div class="week-number">10</div>
                             <div class="week-details">
-                                <h3>Proximamente</h3>
-                                <p>Proximamente</p>
+                                <h3><strong>SEMANA 10</strong> - Diseño JSP - Proyecto Gestion de Tesis</h3>
+                                <p>Diseño de Interfaz (FrontEnd)</p>
                             </div>
                         </div>
                         <div class="week-status">
-                            <span class="status-badge coming-soon">Próximamente</span>
-                            <i class="fas fa-lock"></i>
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
                         </div>
                     </div>
-                </div>         
+                    <div class="week-content" id="week-10-content">
+                        <div class="week-body">
+                            <div class="exercises-grid two-columns">
+                                
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">LOGIN - JSP</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado la interfaz de login sobre un sistema de Gestión de Tesis, el cual cuenta con 3 usuarios (Admin, Docente, Alumno)
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Imagen%20-%20Vistas/login_vista.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Login - Imagen
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Vistas/login.jsp" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Código
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">ADMIN - JSP</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado las interfaces para el administrador, con todas las acciones a los que tendra acceso.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Imagen%20-%20Vistas/admin_vista.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Admin - Imagen
+                                        </a>
+                                    </div><br>                                    
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Vistas/admin.jsp" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Código
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">3</div>
+                                        <h4 class="exercise-title">DOCENTE - JSP</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado las interfaces para el docente, con todas las acciones a los que tendra acceso.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Imagen%20-%20Vistas/docente_vista.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Docente - Imagen
+                                        </a>
+                                    </div><br>                                    
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Vistas/teacher.jsp" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Código
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">4</div>
+                                        <h4 class="exercise-title">ALUMNO - JSP</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado las interfaces para el alumno, con todas las acciones a los que tendra acceso.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JavaScript</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Imagen%20-%20Vistas/alumno_vista.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Alumno - Imagen
+                                        </a>
+                                    </div><br>                                    
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2010/Vistas/student.jsp" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Código
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- Semana 11 -->
+                <div class="week-item fade-in-up" data-week="11">
+                    <div class="week-header" onclick="toggleWeek(11)">
+                        <div class="week-info">
+                            <div class="week-number">11</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 11</strong> - Modelos - Proyecto Gestion de Tesis</h3>
+                                <p>Diseño de Modelos Principales</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-11-content">
+                        <div class="week-body">
+                            <div class="exercises-grid three-columns">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">Usuario</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado el modelo "Usuario" en el cual estaran los datos a usar de los Usarios establecidos (Admin, Docente, Alumno)
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2011/Modelos/Usuario.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2011/Modelos" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 2 -->
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">Tesis</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado el modelo "Tesis" en el cual estaran los datos a usar para la gestion del proyecto.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2011/Modelos/Tesis.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2011/Modelos" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 3 -->
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">3</div>
+                                        <h4 class="exercise-title">Evaluación</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado el modelo "Evaluación" en el cual estaran los datos a usar para la gestion de las tesis subidas por el admin / alumno
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2011/Modelos/Evaluacion.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2011/Modelos" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>                                                         
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                <!-- Semana 12 -->
+                <div class="week-item fade-in-up" data-week="12">
+                    <div class="week-header" onclick="toggleWeek(12)">
+                        <div class="week-info">
+                            <div class="week-number">12</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 12</strong> - Controlador - Proyecto Gestion de Tesis</h3>
+                                <p>Codificación de Controladores principales</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-12-content">
+                        <div class="week-body">
+                            <div class="exercises-grid two-columns">
+                                
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">LOGIN - Controlador</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado el controlador del login que recibe los datos de los 3 usuarios (Admin, Docente, Alumno)
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores/LoginServlet.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">ADMIN - Controlador</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado el controlador del admin que recibe los datos de formularios para realizar el CRUD de usuarios, tesis, etc.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores/AdminServlet.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">3</div>
+                                        <h4 class="exercise-title">DOCENTE - Controlador</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado el controlador del docente que realiza la evaluacion de las tesis que le son asignadas.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores/TeacherServlet.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">4</div>
+                                        <h4 class="exercise-title">ALUMNO - Controlador</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado el controlador del alumno quien recibe los datos que le ha asignado el Admin y las respuestas del Docente.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores/StudentServlet.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                    </div><br>
+                                    <div class="exercise-actions">                            
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2012/Controladores" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver Todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Semana 13 -->
+                <div class="week-item fade-in-up" data-week="13">
+                    <div class="week-header" onclick="toggleWeek(13)">
+                        <div class="week-info">
+                            <div class="week-number">13</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 13</strong> - BASE DE DATOS - Proyecto Gestion de Tesis</h3>
+                                <p>Creación de la Base de Datos y DAO de Modelos</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-13-content">
+                        <div class="week-body">
+                            <div class="exercises-grid">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">Clase Conexión para la Base de Datos y DAO de Modelos</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado la clase "ConexionBD" para manejar los datos en una DataBase y tener el proyecto mas ordenado y mejor desplegado.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2013/Datos/Conexion.java" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Código
+                                        </a>
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2013/Datos" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 2 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">BASE DE DATOS DEL SISTEMA DE GESTION DE TESIS</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha creado en el Gestor de Base de Datos (MySQL), la base de datos para el proyecto Gestion de Tesis.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">MySQL</span>
+                                    </div>
+                                    <div class="exercise-actions">
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2013/DataBase%20-%20Mysql/bdgestiontesis.sql" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-code"></i> Ver Script
+                                        </a>                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/tree/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2013/DataBase%20-%20Mysql" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver todo en GitHub
+                                        </a>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semana 14 -->
+                <div class="week-item fade-in-up" data-week="14">
+                    <div class="week-header" onclick="toggleWeek(14)">
+                        <div class="week-info">
+                            <div class="week-number">14</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 14</strong> - REPORTES - Proyecto Gestion de Tesis</h3>
+                                <p>Evidencias de Generación de Reportes</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-14-content">
+                        <div class="week-body">
+                            <div class="exercises-grid">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">Reporte por parte del Usuario - Docente</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha generado el reporte por parte del docente, donde se ve el historial de las tesis asignadas que ha realizado.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Img</span>
+                                    </div>
+                                    <div class="exercise-actions">                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2014/Imagen_ComoGenerarReportes/reporte_docente.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Imagen
+                                        </a>
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2014/Reportes_Generados/reporte_tesis_asignadas%20(2).csv" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>
+
+                                <!-- Ejercicio 2 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">2</div>
+                                        <h4 class="exercise-title">Reporte por parte del Usuario - Alumno</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha generado el reporte por parte del alumno, donde se ve la evaluacion de su tesis recibida por parte del docente asignado.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Img</span>
+                                    </div>
+                                    <div class="exercise-actions">
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2014/Imagen_ComoGenerarReportes/reporte_alumno.png" target="_blank" class="exercise-link repository">
+                                            <i class="fas fa-image"></i> Ver Imagen
+                                        </a>                                        
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES-2025-2/blob/9e7be8fe9875e7061550d9def471849ef14d268c/SEMANA%2014/Reportes_Generados/reporte_evaluacion_11.txt" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semana 15 -->
+                <div class="week-item fade-in-up" data-week="15">
+                    <div class="week-header" onclick="toggleWeek(15)">
+                        <div class="week-info">
+                            <div class="week-number">15</div>
+                            <div class="week-details">
+                                <h3><strong>SEMANA 15</strong> - PROYECTO TERMINADO -  Proyecto Gestion de Tesis</h3>
+                                <p>Sistema de Gestion de Tesis Completo</p>
+                            </div>
+                        </div>
+                        <div class="week-status">
+                            <span class="status-badge completed">Completado</span>
+                            <i class="fas fa-chevron-down expand-icon"></i>
+                        </div>
+                    </div>
+                    <div class="week-content" id="week-15-content">
+                        <div class="week-body">
+                            <div class="exercises-grid">
+                                <!-- Ejercicio 1 -->
+                                <div class="exercise-panel">
+                                    <div class="exercise-header">
+                                        <div class="exercise-number">1</div>
+                                        <h4 class="exercise-title">Sistema de Gestión de Tesis</h4>
+                                    </div>
+                                    <p class="exercise-description">
+                                        Se ha completado el proyecto "Sistema de Gestión de Tesis". Se puede ver el proyecto completo en los siguientes enlaces.
+                                    </p>
+                                    <div class="exercise-tech">
+                                        <span class="tech-tag">Java</span>
+                                        <span class="tech-tag">HTML</span>
+                                        <span class="tech-tag">CSS</span>
+                                        <span class="tech-tag">JavaScript</span>
+
+                                    </div>
+                                    <div class="exercise-actions">                                      
+                                        <a href="https://github.com/DiegoFlores2025/APLICACIONES_HACKATON" target="_blank" class="exercise-link repository">
+                                            <i class="fab fa-github"></i> Ver en GitHub
+                                        </a>
+                                    </div>
+                                </div>                                                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </section>
